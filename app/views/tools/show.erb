@@ -8,4 +8,10 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Tool">
   </form>
+  <form action="/tools/<%=@tool.id%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <p>Tool Name: <input type="text" name="tool[name]" value="<%=@tool.name%>"></p>
+  <p>Tool Quantity: <input type="text" name="tool[quantity]" value="<%=@tool.quantity%>"></p>
+  <input type="submit" value="Edit tool">
+</form>
 <%end%>

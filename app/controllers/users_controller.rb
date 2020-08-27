@@ -2,14 +2,25 @@ class UsersController < ApplicationController
 
     get '/signup' do
       if current_user
-        redirect '/items'
+        redirect '/tools'
       end
       erb :'users/signup'
     end
   
+    post '/signup' do
+      user = User.create(params)
+      if user.valid?
+        session[:user_id] = user.id
+        redirect "/users/#{user.id}"
+      else
+        flash[:message] = user.errors.full_messages#compare to this to tool/new and tool/edit
+        redirect '/signup'
+      end
+    end
+    
     get '/login' do
       if current_user
-        redirect '/items'
+        redirect '/tools'
       end
         erb :'users/login'
     end
@@ -25,20 +36,9 @@ class UsersController < ApplicationController
       end
     end
   
-    post '/signup' do
-      user = User.create(params)
-      if user.valid?
-        session[:user_id] = user.id
-        redirect "/users/#{user.id}"
-      else
-        flash[:message] = user.errors.full_messages
-        redirect '/signup'
-      end
-    end
-  
     get '/users/:id' do
       @user = User.find_by(params)
-      @items = @user.items
+      @tools = @user.tools
       erb :'users/show'
     end
   

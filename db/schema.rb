@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_194927) do
 
   create_table "tools", force: :cascade do |t|
     t.string "name"
-    t.string "quantity"
+    t.integer "quantity"
     t.integer "user_id"
   end
 

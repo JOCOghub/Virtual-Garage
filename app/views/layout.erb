@@ -3,12 +3,15 @@
     <h1>Your Garage</h1>
 
   </div>
-
-  <a href="/tools">Tools</a>
+  
+  <a href='/tools/new'>Add New Tool</a>
+  <br>
+  <a href="/tools">All Tools</a>
+  <br>
   <% if current_user%>
   <a href="/logout">Logout</a>
   <%end%>
-
+  <br>
   <% if !current_user%>
     <a href="/login">Login</a>
   <%end%>

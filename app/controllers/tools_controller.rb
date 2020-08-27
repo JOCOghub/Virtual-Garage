@@ -13,10 +13,11 @@ class ToolsController < ApplicationController
   
     post '/tools' do
       redirect_if_not_logged_in
-      tool = Tool.create(params)
-      tool.user_id = session[:user_id]
-      tool.save
-      redirect "/tools/#{tool.id}"
+      tool = Tool.create(params)        #if params !quantity.class.integer || empty
+      tool.user_id = session[:user_id]   #<<<
+      tool.save                         #else 
+      redirect "/tools/#{tool.id}"         #redirect '/tools/new'
+      binding.pry
     end
   
     get '/tools/:id' do
@@ -24,6 +25,7 @@ class ToolsController < ApplicationController
       if @tool = Tool.find_by(params)
         erb :'tools/show'
       else
+        flash[:message] = "The tool you looked for was not found"
         redirect '/tools'
       end
   
@@ -54,6 +56,7 @@ class ToolsController < ApplicationController
           tool.delete
       end
         redirect '/tools'
+        #maybe add flash message here "That tool isn't yours!!"
     end
   
   
