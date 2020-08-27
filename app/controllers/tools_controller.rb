@@ -13,11 +13,15 @@ class ToolsController < ApplicationController
   
     post '/tools' do
       redirect_if_not_logged_in
-      tool = Tool.create(params)        #if params !quantity.class.integer || empty
-      tool.user_id = session[:user_id]   #<<<
-      tool.save                         #else 
-      redirect "/tools/#{tool.id}"         #redirect '/tools/new'
-      binding.pry
+      tool = Tool.create(params) 
+      if tool.valid?      
+        tool.user_id = session[:user_id]   
+        tool.save                       
+        redirect "/tools/#{tool.id}"         
+      else 
+        flash[:message] = tool.errors.full_messages 
+        redirect '/tools/new'#just edited    
+      end   
     end
   
     get '/tools/:id' do
