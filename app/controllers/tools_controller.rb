@@ -20,7 +20,7 @@ class ToolsController < ApplicationController
         redirect "/tools/#{tool.id}"         
       else 
         flash[:message] = tool.errors.full_messages 
-        redirect '/tools/new'#just edited    
+        redirect '/tools/new'   
       end   
     end
   
@@ -39,6 +39,7 @@ class ToolsController < ApplicationController
       redirect_if_not_logged_in
       @tool = Tool.find_by(params)
       if !check_owner(@tool)
+        flash[:message] = "That tool isn't yours!!"
         redirect '/tools'
       end
       erb :'tools/edit'
@@ -60,7 +61,6 @@ class ToolsController < ApplicationController
           tool.delete
       end
         redirect '/tools'
-        #maybe add flash message here "That tool isn't yours!!"
     end
   
   
