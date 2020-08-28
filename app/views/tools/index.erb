@@ -1,7 +1,8 @@
 <h1>All Tools</h1>
 
-
 <%=flash[:message]%>
   <% @tools.each do |i| %>
     <li><a href="/tools/<%=i.id%>"><%=i.name%> - <%=i.quantity%></a></li>
   <% end%>
+
+  <link rel="stylesheet" type-"text/css href="public/style.css">
