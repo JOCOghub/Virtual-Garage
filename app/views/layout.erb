@@ -15,6 +15,11 @@
   <% if !current_user%>
     <a href="/login">Login</a>
   <%end%>
+ 
+ <% if current_user%>
+    <%@user = current_user%>
+   <a href="/users/<%=@user.id%>">My profile</a> 
+ <%end%>
 
   <div class="container">
       <%= yield%>

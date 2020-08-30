@@ -1,9 +1,9 @@
 <h1><%=@user.username%>'s Profile</h1>
 
- <a href="/logout">Log Out</a> 
+ 
 
 <%@tools.each do |i|%>
-  <%=i.name%>
-  <br>
+  <li><a href="/tools/<%=i.id%>"><%=i.name%> - <%=i.quantity%> </a></li>
 <%end%>
+
 

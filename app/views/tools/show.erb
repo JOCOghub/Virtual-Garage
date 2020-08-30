@@ -3,6 +3,7 @@
 <p><%=@tool.name%> - <%=@tool.quantity%> </p>
 
 
+
 <% if @tool.user == current_user%>
   <form action="/tools/<%=@tool.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
