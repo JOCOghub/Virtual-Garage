@@ -1,9 +1,10 @@
 <h1><%=@user.username%>'s Profile</h1>
 
  
-
+<div class="links">
 <%@tools.each do |i|%>
   <li><a href="/tools/<%=i.id%>"><%=i.name%> - <%=i.quantity%> </a></li>
 <%end%>
+</div>
 
 

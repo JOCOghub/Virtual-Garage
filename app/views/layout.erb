@@ -1,28 +1,32 @@
+<body>
+<head>
+  <link rel="stylesheet"  href="/stylesheets/application.css"/>
 
-  
-
- <h1>Your Garage</h1>  
-
-
+ <h1>Your Virtual Garage</h1>  
+</head>
+  <div class='link-tags'>
+  To add a new tool to your profile click here:
   <a href='/tools/new'>Add New Tool</a>
   <br>
+  Every tool of the garage can be seen here:
   <a href="/tools">All Tools</a>
   <br>
   <% if current_user%>
+   To log out click here:
   <a href="/logout">Logout</a>
   <%end%>
-  <br>
-  <% if !current_user%>
-    <a href="/login">Login</a>
-  <%end%>
+  
+  
  
- <% if current_user%>
-    <%@user = current_user%>
-   <a href="/users/<%=@user.id%>">My profile</a> 
- <%end%>
+  <% if current_user%>
+  <%@user = current_user%>
+      To see your account click here:
+    <a href="/users/<%=@user.id%>">My profile</a> 
+  <%end%>
+ </div>
 
   <div class="container">
       <%= yield%>
   </div>
-
+</body>
 

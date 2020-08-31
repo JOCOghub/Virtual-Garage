@@ -1,3 +1,30 @@
 h1{
-    color:green; 
+    color:yellow; 
+    font-family: 'Apple chancery', cursive;
+    text-align: center;
+    font-size: 40px;
+ }
+
+ body{
+     background-color: brown;
+ }
+
+ p{
+    font-size: 26px;
+    color: greenyellow
+ }
+
+ .link-tags{
+   color: rgb(221, 87, 255);
+   border-bottom: blue;
+   font-size: 22px;
+ }
+
+ .error{
+     color: black;
+     font-size: 24px;
+ }
+ .links{
+    font-size: 22px;
+    color: rgb(8, 209, 8);
  }

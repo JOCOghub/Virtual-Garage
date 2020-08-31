@@ -1,6 +1,8 @@
+<div class="error">
 <%flash[:message] && flash[:message].each do |m|%>
   <%=m%>
 <%end%>
+</div>
 
   
   <form action="/signup" method="post">

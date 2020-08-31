@@ -1,10 +1,12 @@
 
 
 <h1>All Tools</h1>
-
+<div class="error">
 <%=flash[:message]%>
+</div>
+<div class="links">
   <% @tools.each do |i| %>
     <li><a href="/tools/<%=i.id%>"><%=i.name%> - <%=i.quantity%></a></li>
   <% end%>
-
+</div>
   
