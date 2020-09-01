@@ -1,8 +1,9 @@
 <h1>Welcome!</h1>
-
-<div class="link-tags"> 
-   To log out click here:
-  <a href="/logout">Logout</a>
+  <div class="link-tags">
+  <% if !current_user%>
+  To log in click here:
+    <a href="/login">Login</a>
+  <%end%>
 </div>
 
 <div class="link-tags"> 
