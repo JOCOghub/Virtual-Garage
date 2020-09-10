@@ -1,5 +1,9 @@
 <h1><%=@user.username%>'s Profile</h1>
 
+<div class='link-tags'>
+To edit your profile click here:
+<a href="/users/<%=@user.id%>/edit">Edit Profile</a>
+</div>
  
 <div class="links">
 <%@tools.each do |i|%>

@@ -4,6 +4,7 @@
 
  <h1>Your Virtual Garage</h1>  
 </head>
+  <%if current_user%>
   <div class='link-tags'>
   To add a new tool to your profile click here:
   <a href='/tools/new'>Add New Tool</a>
@@ -11,7 +12,6 @@
   Every tool of the garage can be seen here:
   <a href="/tools">All Tools</a>
   <br>
-  <% if current_user%>
    To log out click here:
   <a href="/logout">Logout</a>
   <%end%>
