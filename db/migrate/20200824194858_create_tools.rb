@@ -1,9 +1,8 @@
-class CreateTools < ActiveRecord::Migration[6.0]
+class CreateUsers < ActiveRecord::Migration[6.0]
   def change
-    create_table :tools do |t|
+    create_table :users do |t|
       t.string :name
-      t.integer :quantity
-      t.integer :user_id
+      t.integer :admin_id
     end
   end
 end

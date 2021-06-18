@@ -1,5 +1,5 @@
-class AlterUsersTable < ActiveRecord::Migration[6.0]
+class AlterAdminsTable < ActiveRecord::Migration[6.0]
   def change
-    add_column :users, :password_digest, :string
+    add_column :admins, :password_digest, :string
   end
 end
