@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     get '/' do
       erb :'home'
     end
+
+    not_found do
+      status 404
+      erb :oops
+    end
   
     helpers do
         def current_admin
