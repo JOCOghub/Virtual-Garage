@@ -26,7 +26,7 @@ class AdminsController < ApplicationController
     end
   
     post '/login' do
-      @admin = Admin.find_by(adminname: params[:adminname])
+      @admin = Admin.find_by(username: params[:username])
       if @admin && @admin.authenticate(params[:password])
         session[:admin_id] = @admin.id
         redirect "/admins/#{@admin.id}"

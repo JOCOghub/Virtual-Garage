@@ -47,20 +47,20 @@ class UsersController < ApplicationController
   
     patch '/users/:id' do
       redirect_if_not_logged_in
-      @tool = User.find_by(id: params[:id])
-      if check_owner(@tool)
-        @tool.update(params[:tool])
+      @user = User.find_by(id: params[:id])
+      if check_owner(@user)
+        @user.update(params[:user])
       end
-        erb :'tools/show'
+        erb :'users/show'
     end
   
-    delete '/tools/:id' do
+    delete '/users/:id' do
       redirect_if_not_logged_in
-      tool = User.find_by(id: params[:id])
-      if check_owner(tool)
-          tool.delete
+      user = User.find_by(id: params[:id])
+      if check_owner(user)
+          user.delete
       end
-        redirect '/tools'
+        redirect '/users'
     end
   
   
