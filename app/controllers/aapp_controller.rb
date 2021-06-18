@@ -13,19 +13,19 @@ class ApplicationController < Sinatra::Base
     end
   
     helpers do
-        def current_user
-          @current_user ||=  User.find_by(id: session[:user_id])
+        def current_admin
+          @current_admin ||=  Admin.find_by(id: session[:admin_id])
         end
   
         def redirect_if_not_logged_in
-          if !current_user
+          if !current_admin
             flash[:message] = "You must log in to see that page"
             redirect '/login'
           end
         end
   
         def check_owner(obj)
-          obj.user == current_user
+          obj.admin == current_admin
         end
   
     end

@@ -1,0 +1,14 @@
+<h1><%=@admin.username%>'s Profile</h1>
+
+<div class='link-tags'>
+To edit your profile click here:
+<a href="/admins/<%=@admin.id%>/edit">Edit Profile</a>
+</div>
+ 
+<div class="links">
+<%@users.each do |i|%>
+  <li><a href="/users/<%=i.id%>"><%=i.name%> - <%=i.quantity%> </a></li>
+<%end%>
+</div>
+
+

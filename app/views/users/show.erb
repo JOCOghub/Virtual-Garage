@@ -1,14 +1,17 @@
-<h1><%=@user.username%>'s Profile</h1>
+<h1>User</h1>
 
-<div class='link-tags'>
-To edit your profile click here:
-<a href="/users/<%=@user.id%>/edit">Edit Profile</a>
-</div>
- 
-<div class="links">
-<%@tools.each do |i|%>
-  <li><a href="/tools/<%=i.id%>"><%=i.name%> - <%=i.quantity%> </a></li>
+<p><%=@user.name%> - <%=@user.quantity%> </p>
+
+
+
+<% if @user.admin == current_admin%>
+  <form action="/users/<%=@user.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete User">
+  </form>
+  <form action="/users/<%=@user.id%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <p>User Name: <input type="text" name="user[name]" value="<%=@user.name%>"></p>
+  <input type="submit" value="Update user">
+</form>
 <%end%>
-</div>
-
-

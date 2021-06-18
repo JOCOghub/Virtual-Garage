@@ -1,0 +1,12 @@
+
+
+<h1>All Users</h1>
+<div class="error">
+<%=flash[:message]%>
+</div>
+<div class="links">
+  <% @users.each do |i| %>
+    <li><a href="/users/<%=i.id%>"><%=i.name%></a></li>
+  <% end%>
+</div>
+  

@@ -1,0 +1,6 @@
+ <form action="/admins/<%=@admin.id%>" method="post">
+ <input type="hidden" name="_method" value="patch">
+    <p>Username: <input type="text" name="admin[username]" value="<%=@admin.username%>"></p>
+    <p>Password: <input type="password" name="admin[password]"></p>
+    <input type="submit" value="Edit Profile">
+  </form>
