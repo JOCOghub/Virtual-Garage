@@ -6,8 +6,8 @@ h1{
  }
 
  body{
-    background-color: red;
-    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnVMEPI4S7VIQvtw2SEoASZUPlZC1Nq8fCDQ&usqp=CAU); */
+    /* background-color: red; */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnVMEPI4S7VIQvtw2SEoASZUPlZC1Nq8fCDQ&usqp=CAU); 
  }
 
  p{
@@ -22,7 +22,7 @@ h1{
  }
 
  .error{
-     color: black;
+     color: red;
      font-size: 24px;
  }
  .links{
